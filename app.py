@@ -13,7 +13,7 @@ diff_rows = []
 sys.stdout.write('Gathering rows from input files...\n')
 
 new_rows = 0
-with open(new_file) as fin_new:
+with open(new_file, encoding='utf-8', errors='ignore') as fin_new:
     read_new = csv.reader(fin_new)
     for row_new in read_new:
         new_file_rows.append(row_new)
@@ -21,7 +21,7 @@ with open(new_file) as fin_new:
 sys.stdout.write('New file has %s rows\n' % new_rows)
 
 old_rows = 0
-with open(old_file) as fin_old:
+with open(old_file, encoding='utf-8', errors='ignore') as fin_old:
     read_old = csv.reader(fin_old)
     for row_old in read_old:
         old_file_rows.append(row_old)
